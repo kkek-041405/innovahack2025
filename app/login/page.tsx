@@ -33,8 +33,8 @@ export default function LoginPage() {
       url: typeof window !== 'undefined' ? window.location.origin + '/login' : '',
       handleCodeInApp: true,
     }
-  const auth = getAuthClient()
-  await sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    const auth = getAuthClient()
+    await sendSignInLinkToEmail(auth, email, actionCodeSettings)
     window.localStorage.setItem('emailForSignIn', email)
     setSent(true)
   }
