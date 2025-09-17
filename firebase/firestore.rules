@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() { return request.auth != null; }
+    function role() { return request.auth.token.role; }
+    function isRole(r) { return isSignedIn() && role() == r; }
+    function isAdmin() { return isRole('admin'); }
+    function isJudge() { return isRole('judge'); }
+    function isStaff() { return isRole('staff'); }
+    function isTeamMember(teamId) {
+      return isSignedIn() &&
+        exists(/databases/$(database)/documents/teamMembers/$(teamId + '_' + request.auth.uid));
+    }
+
+    match /settings/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /users/{uid} {
+      allow read: if isSignedIn() && (isAdmin() || uid == request.auth.uid);
+      allow write: if uid == request.auth.uid || isAdmin();
+    }
+
+    match /teams/{teamId} {
+      allow read: if isSignedIn() && (isAdmin() || isTeamMember(teamId));
+      allow create: if isSignedIn();
+      allow update, delete: if isAdmin() || isTeamMember(teamId);
+    }
+
+    match /teamMembers/{id} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin() || (isSignedIn() && request.resource.data.uid == request.auth.uid);
+    }
+
+    match /invites/{token} {
+      allow read: if isSignedIn();
+      allow create, delete: if isSignedIn();
+      allow update: if false;
+    }
+
+    match /submissions/{teamId} {
+      allow read: if isSignedIn() && (isAdmin() || isTeamMember(teamId) || isJudge());
+      allow create, update: if isSignedIn() && isTeamMember(teamId);
+      allow delete: if isAdmin();
+    }
+
+    match /judgeAssignments/{id} {
+      allow read: if isSignedIn() && (isAdmin() || isJudge());
+      allow write: if isAdmin();
+    }
+
+    match /scores/{id} {
+      allow read: if isSignedIn() && (isAdmin() || isJudge());
+      allow create, update: if isJudge();
+      allow delete: if isAdmin();
+    }
+
+    match /announcements/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /checkins/{id} {
+      allow read: if isAdmin() || isStaff();
+      allow create: if isStaff() || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,19 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() { return request.auth != null; }
+    function isAdmin() { return isSignedIn() && request.auth.token.role == 'admin'; }
+    function isTeamMember(teamId) {
+      return isSignedIn() &&
+        exists(/databases/(default)/documents/teamMembers/$(teamId + '_' + request.auth.uid));
+    }
+
+    match /submissions/{teamId}/{fileName} {
+      allow read: if isSignedIn();
+      allow write: if isTeamMember(teamId)
+        && request.resource.size < 25 * 1024 * 1024
+        && request.resource.contentType.matches('application/pdf|application/vnd\\..*|image/.*|video/.*');
+      allow delete: if isAdmin();
+    }
+  }
+}
