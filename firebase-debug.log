@@ -1,0 +1,225 @@
+[debug] [2025-09-18T05:36:39.183Z] ----------------------------------------------------------------------
+[debug] [2025-09-18T05:36:39.186Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-09-18T05:36:39.186Z] CLI Version:   14.1.0
+[debug] [2025-09-18T05:36:39.186Z] Platform:      win32
+[debug] [2025-09-18T05:36:39.186Z] Node Version:  v22.11.0
+[debug] [2025-09-18T05:36:39.186Z] Time:          Thu Sep 18 2025 11:06:39 GMT+0530 (India Standard Time)
+[debug] [2025-09-18T05:36:39.187Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-18T05:36:39.394Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-18T05:36:39.394Z] > authorizing via signed-in user (konathamkomal0414@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  J:\Projects\Hackathon
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-09-18T05:36:54.805Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:54.805Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:54.806Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-09-18T05:36:55.837Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-09-18T05:36:55.837Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project vvisc-c4ab1 (VVISC) 
+[info] 
+=== Firestore Setup
+[debug] [2025-09-18T05:36:57.772Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:57.773Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:57.773Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com [none]
+[debug] [2025-09-18T05:36:57.773Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:36:59.723Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com 200
+[debug] [2025-09-18T05:36:59.724Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com [omitted]
+[debug] [2025-09-18T05:36:59.724Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:59.724Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:36:59.724Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) [none]
+[debug] [2025-09-18T05:37:00.295Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) 200
+[debug] [2025-09-18T05:37:00.295Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) {"name":"projects/vvisc-c4ab1/databases/(default)","uid":"f1ceb479-d033-438b-8539-9ca28656ef24","createTime":"2025-08-14T08:09:07.209541Z","updateTime":"2025-08-14T08:09:07.209541Z","locationId":"asia-south1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-09-18T04:37:20.498686Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"j","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IJe83fnL4Y8DMO7775nviY8D"}
+[debug] [2025-09-18T05:37:00.296Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-09-18T05:37:00.296Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-09-18T05:37:00.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-18T05:37:00.297Z] > authorizing via signed-in user (konathamkomal0414@gmail.com)
+[debug] [2025-09-18T05:37:00.297Z] [iam] checking project vvisc-c4ab1 for permissions ["firebase.projects.get"]
+[debug] [2025-09-18T05:37:00.297Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:00.297Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:00.297Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions [none]
+[debug] [2025-09-18T05:37:00.297Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:37:00.297Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-18T05:37:00.920Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions 200
+[debug] [2025-09-18T05:37:00.921Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-09-18T05:37:02.784Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:02.784Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:02.784Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/releases pageSize=10&pageToken=
+[debug] [2025-09-18T05:37:04.653Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/releases 200
+[debug] [2025-09-18T05:37:04.654Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/releases {"releases":[{"name":"projects/vvisc-c4ab1/releases/cloud.firestore","rulesetName":"projects/vvisc-c4ab1/rulesets/009a375e-747d-4b3e-a812-56ac04571342","createTime":"2025-08-14T08:09:17.230273Z","updateTime":"2025-08-14T08:09:17.230273Z"},{"name":"projects/vvisc-c4ab1/releases/firebase.storage/vvisc-c4ab1.firebasestorage.app","rulesetName":"projects/vvisc-c4ab1/rulesets/76eedeb2-5dcc-4c65-8b51-3f5e676162b8","createTime":"2025-08-14T08:59:58.467443Z","updateTime":"2025-08-14T08:59:58.467443Z"}]}
+[debug] [2025-09-18T05:37:04.654Z] Found ruleset: projects/vvisc-c4ab1/rulesets/009a375e-747d-4b3e-a812-56ac04571342
+[debug] [2025-09-18T05:37:04.654Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:04.654Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:04.654Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/rulesets/009a375e-747d-4b3e-a812-56ac04571342 [none]
+[debug] [2025-09-18T05:37:05.044Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/rulesets/009a375e-747d-4b3e-a812-56ac04571342 200
+[debug] [2025-09-18T05:37:05.044Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/vvisc-c4ab1/rulesets/009a375e-747d-4b3e-a812-56ac04571342 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-09-18T05:37:06.360Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.361Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.361Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.361Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.361Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-09-18T05:37:06.364Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-09-18T05:37:06.930Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-09-18T05:37:06.930Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/vvisc-c4ab1/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2025-09-18T05:37:06.976Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-09-18T05:37:06.976Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Apphosting Setup
+[debug] [2025-09-18T05:37:06.980Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.980Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:06.980Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/vvisc-c4ab1/billingInfo [none]
+[debug] [2025-09-18T05:37:08.858Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/vvisc-c4ab1/billingInfo 200
+[debug] [2025-09-18T05:37:08.858Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/vvisc-c4ab1/billingInfo {"name":"projects/vvisc-c4ab1/billingInfo","projectId":"vvisc-c4ab1","billingAccountName":"billingAccounts/01125E-9E7505-F316A3","billingEnabled":true}
+[info] i  Writing default settings to apphosting.yaml... 
+[info] +  Wrote apphosting.yaml 
+[info] +  Create a new App Hosting backend with `firebase apphosting:backends:create` 
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] +  Wrote storage.rules 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2025-09-18T05:37:10.366Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:10.366Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:10.367Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com [none]
+[debug] [2025-09-18T05:37:10.367Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:37:12.360Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com 200
+[debug] [2025-09-18T05:37:12.360Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2025-09-18T05:37:12.362Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:12.362Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:12.362Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2025-09-18T05:37:12.362Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:37:13.127Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2025-09-18T05:37:13.128Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2025-09-18T05:37:23.140Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:23.140Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:23.141Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com [none]
+[debug] [2025-09-18T05:37:23.141Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:37:25.202Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com 200
+[debug] [2025-09-18T05:37:25.202Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2025-09-18T05:37:25.205Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:25.205Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:37:25.205Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 [none]
+[debug] [2025-09-18T05:37:25.949Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 200
+[debug] [2025-09-18T05:37:25.949Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 {"projectId":"vvisc-c4ab1","projectNumber":"607705074910","displayName":"VVISC","name":"projects/vvisc-c4ab1","resources":{"hostingSite":"vvisc-c4ab1"},"state":"ACTIVE","etag":"1_1dc97252-7888-446f-add0-6283773128fc"}
+[debug] [2025-09-18T05:44:19.617Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:44:19.618Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:44:19.618Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/vvisc-c4ab1/locations/asia-southeast1/instances databaseId=vvisc-c4ab1-default-rtdb&validateOnly=true
+[debug] [2025-09-18T05:44:19.618Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/vvisc-c4ab1/locations/asia-southeast1/instances {"type":"default_database"}
+[debug] [2025-09-18T05:44:29.635Z] *** [apiv2] error from fetch(https://firebasedatabase.googleapis.com/v1beta/projects/vvisc-c4ab1/locations/asia-southeast1/instances?databaseId=vvisc-c4ab1-default-rtdb&validateOnly=true, {"headers":{},"method":"POST","signal":{},"body":"{\"type\":\"default_database\"}"}): AbortError: The user aborted a request.
+[debug] [2025-09-18T05:44:29.635Z] Invalid Realtime Database instance name: vvisc-c4ab1-default-rtdb. Timeout reached making request to https://firebasedatabase.googleapis.com/v1beta/projects/vvisc-c4ab1/locations/asia-southeast1/instances?databaseId=vvisc-c4ab1-default-rtdb&validateOnly=true
+[debug] [2025-09-18T05:44:30.042Z] TypeError: Cannot read properties of undefined (reading 'body')
+    at checkInstanceNameAvailable (C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\database.js:106:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createDefaultDatabaseInstance (C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:50:25)
+    at async doSetup (C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:89:35)
+    at async init (C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:41:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-09-18T05:45:08.550Z] ----------------------------------------------------------------------
+[debug] [2025-09-18T05:45:08.558Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\KKEK\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-09-18T05:45:08.559Z] CLI Version:   14.1.0
+[debug] [2025-09-18T05:45:08.559Z] Platform:      win32
+[debug] [2025-09-18T05:45:08.559Z] Node Version:  v22.11.0
+[debug] [2025-09-18T05:45:08.559Z] Time:          Thu Sep 18 2025 11:15:08 GMT+0530 (India Standard Time)
+[debug] [2025-09-18T05:45:08.559Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-18T05:45:08.772Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-18T05:45:08.774Z] > authorizing via signed-in user (konathamkomal0414@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  J:\Projects\Hackathon
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-09-18T05:45:35.318Z] Using project from CLI flag: vvisc-c4ab1
+[debug] [2025-09-18T05:45:35.319Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:35.319Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:35.320Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 [none]
+[debug] [2025-09-18T05:45:36.334Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 200
+[debug] [2025-09-18T05:45:36.334Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/vvisc-c4ab1 {"projectId":"vvisc-c4ab1","projectNumber":"607705074910","displayName":"VVISC","name":"projects/vvisc-c4ab1","resources":{"hostingSite":"vvisc-c4ab1"},"state":"ACTIVE","etag":"1_1dc97252-7888-446f-add0-6283773128fc"}
+[info] i  Using project vvisc-c4ab1 (VVISC) 
+[info] 
+=== Firestore Setup
+[debug] [2025-09-18T05:45:36.338Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:36.338Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:36.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com [none]
+[debug] [2025-09-18T05:45:36.339Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:45:38.588Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com 200
+[debug] [2025-09-18T05:45:38.588Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/vvisc-c4ab1/services/firestore.googleapis.com [omitted]
+[debug] [2025-09-18T05:45:38.588Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:38.588Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:38.589Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) [none]
+[debug] [2025-09-18T05:45:39.400Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) 200
+[debug] [2025-09-18T05:45:39.401Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/vvisc-c4ab1/databases/(default) {"name":"projects/vvisc-c4ab1/databases/(default)","uid":"f1ceb479-d033-438b-8539-9ca28656ef24","createTime":"2025-08-14T08:09:07.209541Z","updateTime":"2025-08-14T08:09:07.209541Z","locationId":"asia-south1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-09-18T04:45:59.374851Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"j","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"INuTk/HN4Y8DMO7775nviY8D"}
+[debug] [2025-09-18T05:45:39.401Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-09-18T05:45:39.401Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-09-18T05:45:39.402Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-18T05:45:39.402Z] > authorizing via signed-in user (konathamkomal0414@gmail.com)
+[debug] [2025-09-18T05:45:39.402Z] [iam] checking project vvisc-c4ab1 for permissions ["firebase.projects.get"]
+[debug] [2025-09-18T05:45:39.403Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:39.403Z] Checked if tokens are valid: true, expires at: 1758177372701
+[debug] [2025-09-18T05:45:39.403Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions [none]
+[debug] [2025-09-18T05:45:39.404Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions x-goog-quota-user=projects/vvisc-c4ab1
+[debug] [2025-09-18T05:45:39.404Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-18T05:45:41.034Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions 200
+[debug] [2025-09-18T05:45:41.034Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vvisc-c4ab1:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 

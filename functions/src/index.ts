@@ -46,6 +46,26 @@ export const api = functions.https.onCall(async (data, context) => {
       await batch.commit()
       return { teamId: ref.id }
     }
+    case 'createInvite': {
+      const { teamId, ttlHours } = (payload as { teamId: string; ttlHours?: number })
+      if (!teamId) throw new functions.https.HttpsError('invalid-argument', 'teamId required')
+      const teamRef = db.doc(`teams/${teamId}`)
+      const teamSnap = await teamRef.get()
+      if (!teamSnap.exists) throw new functions.https.HttpsError('not-found', 'Team not found')
+      const team = teamSnap.data() as any
+      if (team.ownerId !== context.auth.uid) throw new functions.https.HttpsError('permission-denied', 'Only owner')
+      if (team.memberCount >= 4) throw new functions.https.HttpsError('failed-precondition', 'Team full')
+      const token = Math.random().toString(36).slice(2, 10)
+      const hours = ttlHours && ttlHours > 0 && ttlHours <= 48 ? ttlHours : 24
+      const expiresAt = admin.firestore.Timestamp.fromMillis(Date.now() + hours * 60 * 60 * 1000)
+      await db.doc(`invites/${token}`).set({
+        teamId,
+        createdBy: context.auth.uid,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        expiresAt,
+      })
+      return { token, teamId, expiresAt: expiresAt.toMillis() }
+    }
     case 'joinTeamViaInvite': {
       const { token } = payload as { token: string }
       const invRef = db.doc(`invites/${token}`)

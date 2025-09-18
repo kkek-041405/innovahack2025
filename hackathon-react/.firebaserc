@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "hackathon-react"
+  },
+  "targets": {
+    "hackathon-react": {
+      "hosting": {
+        "site": "your-firebase-hosting-site"
+      },
+      "functions": {
+        "source": "functions"
+      }
+    }
+  }
+}

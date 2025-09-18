@@ -16,6 +16,7 @@ export type CreateTeamResponse = { teamId: string }
 export const actions = {
   setRole: (uid: string, role: Role) => callApi<{ ok: true }>('setRole', { uid, role }),
   createTeam: (name: string, challengeId: string) => callApi<CreateTeamResponse>('createTeam', { name, challengeId }),
+  createInvite: (teamId: string, ttlHours?: number) => callApi<{ token: string; teamId: string; expiresAt: number }>('createInvite', { teamId, ttlHours }),
   joinTeamViaInvite: (token: string) => callApi<{ ok: true; teamId: string }>('joinTeamViaInvite', { token }),
   finalizeSubmission: (teamId: string, submission: Record<string, unknown>) => callApi<{ ok: true }>('finalizeSubmission', { teamId, submission }),
 }

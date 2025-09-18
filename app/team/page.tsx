@@ -3,8 +3,6 @@
 import { useAuth } from '@/lib/useAuth'
 import { useEffect, useState } from 'react'
 import { actions } from '@/lib/functions'
-import { doc, setDoc } from 'firebase/firestore'
-import { getDb } from '@/lib/firebase'
 
 export default function TeamPage() {
   const { user, loading } = useAuth()
@@ -34,15 +32,13 @@ export default function TeamPage() {
 
   async function createInvite() {
     if (!teamId || !user) return
-    const token = crypto.randomUUID().slice(0, 8)
-    const db = getDb()
-    await setDoc(doc(db, 'invites', token), {
-      teamId,
-      createdBy: user.uid,
-      createdAt: new Date(),
-      expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24), // 24h
-    })
-    setInviteToken(token)
+    setStatus('working')
+    try {
+      const res = await actions.createInvite(teamId)
+      setInviteToken(res.token)
+    } finally {
+      setStatus('idle')
+    }
   }
 
   return (

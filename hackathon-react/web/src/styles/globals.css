@@ -7,24 +7,21 @@
   --fg: #e5e7eb;
 }
 
-html, body, #__next {
+html, body, #root {
   height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   color: var(--fg);
-  /* Base color + two decorative radial gradients. Prevent tiling to avoid visible bands/edges. */
   background-color: var(--bg);
   background-image:
     radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.22), transparent 60%),
     radial-gradient(1200px 600px at 90% -10%, rgba(14,165,233,.22), transparent 60%);
   background-repeat: no-repeat, no-repeat;
-  /* Keep positioning consistent across viewports */
   background-position: 10% -10%, 90% -10%;
 }
 
-/* Subtle noise overlay to reduce gradient banding on some displays */
 body::after {
   content: '';
   position: fixed;
@@ -35,7 +32,7 @@ body::after {
   pointer-events: none;
   background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 2px 2px;
-  opacity: 0.35; /* keep it subtle */
+  opacity: 0.35;
 }
 
 .container {
@@ -96,6 +93,16 @@ body::after {
 
 a { @apply text-secondary; }
 a:hover { @apply text-cyan-300; }
+
+/* Forms */
+.label { @apply block text-sm font-medium mb-1 text-white/90; }
+.input { @apply w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 outline-none focus:border-primary transition; }
+.error { @apply mt-1 text-xs text-red-400; }
+
+/* Ensure native select dropdowns are readable on Windows */
+select.input { color: #e5e7eb; background-color: rgba(255,255,255,0.05); }
+select.input option { color: #111827; background-color: #ffffff; }
+select.input optgroup { color: #111827; }
 
 @media (max-width: 640px) {
   .timeline-container::before {
