@@ -219,7 +219,7 @@ export default function RegistrationForm() {
             <button className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 font-semibold text-white hover:bg-blue-600 transition disabled:opacity-60" type="submit" disabled={submitting}>
               {submitting ? 'Submitting...' : 'Submit Registration'}
             </button>
-            <p className="text-xs text-white/60">Tip: Set VITE_REGISTRATION_FORM_URL to embed an official form.</p>
+
           </div>
           {submitError && <p className="error">{submitError}</p>}
         </form>

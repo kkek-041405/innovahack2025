@@ -33,6 +33,7 @@ export default function Home() {
   const mentors = [
     { name: 'Dr B. Sai Jyothi', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Dr Kiran Kumar', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Dr. K.V.L Somasekhar', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Mr N. Tagore', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Mr Ravikumar', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'M. Ramya Harika', role: 'Mentor & Jury', img: '/avatar.svg' },
@@ -109,7 +110,10 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-20 border-b border-white/10 bg-[rgba(11,16,32,0.6)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(11,16,32,0.4)]">
         <div className="container flex items-center justify-between py-4">
-          <a href="#" className="font-bold text-xl transition duration-300 hover:text-primary">
+          <a href="#" className="flex items-center gap-2 font-bold text-xl transition duration-300 hover:text-primary">
+            <div className="bg-white rounded p-1">
+              <img src="/vvisc.png" alt="VVISC" className="h-6 w-6" />
+            </div>
             INNOVA HACK 2025
           </a>
 
@@ -117,9 +121,9 @@ export default function Home() {
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
             <NavLink href="#about">About</NavLink>
             <NavLink href="#challenges">Tracks</NavLink>
+            <NavLink href="#schedule">Schedule</NavLink>
             <NavLink href="#mentors">Mentors</NavLink>
             <NavLink href="#jury">Judges</NavLink>
-            <NavLink href="#schedule">Schedule</NavLink>
             <NavLink href="#prizes">Prizes</NavLink>
             <NavLink href="#partners">Partners</NavLink>
             <NavLink href="#faq">FAQ</NavLink>
@@ -150,14 +154,14 @@ export default function Home() {
                   src="/vvisc.png"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/vvisc.svg' }}
                   alt="VVIT IUCEE Student Chapter (VVISC)"
-                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white/10 p-2 border border-white/20 object-contain transition-transform hover:scale-105"
+                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white p-2 border border-white/20 object-contain transition-transform hover:scale-105"
                   loading="eager"
                 />
                 <img
                   src="/vvitu.png"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/vvitu.svg' }}
                   alt="VVIT University"
-                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white/10 p-2 border border-white/20 object-contain transition-transform hover:scale-105"
+                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white p-2 border border-white/20 object-contain transition-transform hover:scale-105"
                   loading="eager"
                 />
               </div>
@@ -225,7 +229,7 @@ export default function Home() {
             <ul className="card space-y-2">
               <li>• Teams of 4–5 members</li>
               <li>• 24-hour hackathon (Sept 25–26, 2025)</li>
-              <li>• Hosted at VVIT, Guntur</li>
+              <li>• Hosted at VVIT University, Guntur</li>
               <li>• Open to all engineering students</li>
               <li>• Mentors and judges from industry</li>
               <li>• Students must bring their own laptops, power extension boxes/boards, and any required hardware</li>
@@ -336,6 +340,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Organizers */}
+      <section id="organizers" className="py-12 scroll-mt-24">
+        <div className="container">
+          <h2 className="section-title animate-fade-in-up">Organizers</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            <Reveal>
+              <div className="card">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white rounded p-1">
+                    <img src="/vvisc.png" alt="VVISC" className="h-14 w-14 object-contain" />
+                  </div>
+                  <div>
+                    <div className="font-semibold">VVIT IUCEE Student Chapter</div>
+                    <div className="text-white/70 text-sm">Organizing Team</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="card">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white rounded p-1">
+                    <img src="/vvitu.png" alt="VVIT" className="h-14 w-14 object-contain" />
+                  </div>
+                  <div>
+                    <div className="font-semibold">VVIT University</div>
+                    <div className="text-white/70 text-sm">Host Institution</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Rewards */}
       <section id="prizes" className="py-12 scroll-mt-24">
         <div className="container">
@@ -376,7 +415,7 @@ export default function Home() {
               },
               {
                 q: 'What is the team size?',
-                a: 'Teams of 4–5 members are allowed. You can form teams or join as individuals.'
+                a: 'Teams of 4–5 members are allowed. You can form teams. '
               },
               {
                 q: 'Is prior hackathon experience required?',
@@ -389,6 +428,10 @@ export default function Home() {
               {
                 q: 'Do I need to bring hardware?',
                 a: 'All participants must bring their own laptops and power extension boxes/boards. Teams in hardware tracks (ECE/EEE) must also bring any required hardware kits and components.'
+              },
+              {
+                q: 'I am new to hackathons. How do I approach the mentors? Is it during the hackathon or before/after?',
+                a: '👉 Mentors will be available throughout the hackathon to guide you. You can approach them during the event whenever you face challenges—whether technical, domain-related, or idea validation. Before the hackathon, you can clarify general doubts with the organizing team. After the hackathon, mentors may not be officially available, but you are encouraged to connect with them for further guidance.'
               }
             ].map((f) => (
               <FaqAccordion key={f.q} question={f.q} answer={f.a} />
@@ -402,8 +445,10 @@ export default function Home() {
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-white/70">
           <div>© 2025 INNOVA HACK 2025 - VVIT IUCEE Student Chapter</div>
           <div className="flex gap-4">
-            <a href="mailto:vvishackathon@vvitguntur.org" target="_blank" rel="noreferrer">Email</a>
-            <a href="#contact">Contact: +91-XXXXXXXXXX</a>
+            <a href="mailto:ewbvvit@gmail.com" target="_blank" rel="noreferrer">Email</a>
+            <a href="tel:+917569251576">+91-7569251576</a>
+            <a href="tel:+916300522709">+91-6300522709</a>
+            <a href="tel:+918074246024">+91-8074246024</a>
           </div>
         </div>
       </footer>
