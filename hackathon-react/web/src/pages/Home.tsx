@@ -188,7 +188,18 @@ export default function Home() {
               </a>
             </div>
           </div>
-
+<div className="md:w-2/5">
+            <Reveal>
+              <div className="relative aspect-square w-full">
+                <img
+                  src="/innova-hack-2025-hero.png"
+                  alt="INNOVA HACK 2025"
+                  className="object-cover rounded-xl border border-white/10 w-full h-full"
+                  loading="eager"
+                />
+              </div>
+            </Reveal>
+          </div>
 
 
         </div>
@@ -217,6 +228,7 @@ export default function Home() {
               <li>• Hosted at VVIT, Guntur</li>
               <li>• Open to all engineering students</li>
               <li>• Mentors and judges from industry</li>
+              <li>• Students must bring their own laptops, power extension boxes/boards, and any required hardware</li>
             </ul>
           </div>
         </div>
@@ -330,7 +342,7 @@ export default function Home() {
           <h2 className="section-title animate-fade-in-up">Prizes & Perks</h2>
           <div className="grid md:grid-cols-2 gap-5">
             {[
-              { title: 'Exciting Cash Prizes', desc: 'For top winners across all tracks' },
+              { title: 'Certificates', desc: 'For top winners across all tracks' },
               { title: 'Goodies & Swags', desc: 'Certificates and special merchandise for all participants' },
               { title: 'Industry Networking', desc: 'Connect with industry experts, mentors, and potential employers' },
               { title: 'Career Opportunities', desc: 'Internship and project opportunities for standout teams' }
@@ -376,7 +388,7 @@ export default function Home() {
               },
               {
                 q: 'Do I need to bring hardware?',
-                a: 'Participants in hardware tracks (ECE/EEE) must bring their own kits/laptops. Software track participants can use lab computers.'
+                a: 'All participants must bring their own laptops and power extension boxes/boards. Teams in hardware tracks (ECE/EEE) must also bring any required hardware kits and components.'
               }
             ].map((f) => (
               <FaqAccordion key={f.q} question={f.q} answer={f.a} />

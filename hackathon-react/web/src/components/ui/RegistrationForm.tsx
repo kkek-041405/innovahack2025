@@ -5,7 +5,7 @@ import { db } from '../../lib/firebase'
 type FormData = {
   teamName: string
   college: string
-  track: '💻 BYTE-BUILDERS (CSE & Allied Branches)' | '⚡ WATT-WORKS (ECE & EEE Branches)' | ''
+  track: '💻 BYTE-BUILDERS (CSE & Allied Branches)' | '⚡ WATT-WORKS (ECE & EEE Branches)' | '🏗️ INFRANOVA (Mechanical & Civil Branches)' | ''
   teamSize: '4' | '5' | ''
   leaderName: string
   leaderEmail: string
@@ -146,11 +146,12 @@ export default function RegistrationForm() {
 
           <div className="grid md:grid-cols-3 gap-4">
             <div>
-              <label className="label">Track</label>
+              <label className="label">Domain / Track</label>
               <select className="input" value={data.track} onChange={e => set('track', e.target.value)}>
                 <option value="">Select a track</option>
                 <option>💻 BYTE-BUILDERS (CSE & Allied Branches)</option>
                 <option>⚡ WATT-WORKS (ECE & EEE Branches)</option>
+                <option>🏗️ INFRANOVA (Mechanical & Civil Branches)</option>
               </select>
               {errors.track && <p className="error">{errors.track}</p>}
             </div>
