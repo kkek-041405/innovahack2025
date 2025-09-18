@@ -6,13 +6,14 @@ type FormData = {
   teamName: string
   college: string
   track: '💻 BYTE-BUILDERS (CSE & Allied Branches)' | '⚡ WATT-WORKS (ECE & EEE Branches)' | ''
-  teamSize: '2' | '3' | '4' | ''
+  teamSize: '4' | '5' | ''
   leaderName: string
   leaderEmail: string
   leaderPhone: string
   member2?: string
   member3?: string
   member4?: string
+  member5?: string
   agree: boolean
 }
 
@@ -27,6 +28,7 @@ const initialState: FormData = {
   member2: '',
   member3: '',
   member4: '',
+  member5: '',
   agree: false,
 }
 
@@ -46,15 +48,16 @@ export default function RegistrationForm() {
     if (!data.teamName.trim()) e.teamName = 'Team name is required'
     if (!data.college.trim()) e.college = 'College/University is required'
     if (!data.track) e.track = 'Please select a track'
-    if (!data.teamSize) e.teamSize = 'Select team size (2–4)'
+  if (!data.teamSize) e.teamSize = 'Select team size (4–5)'
     if (!data.leaderName.trim()) e.leaderName = 'Team leader name is required'
     if (!/^\S+@\S+\.\S+$/.test(data.leaderEmail)) e.leaderEmail = 'Valid email is required'
     if (!/^\+?[0-9]{7,15}$/.test(data.leaderPhone.replace(/\s|-/g, ''))) e.leaderPhone = 'Valid phone is required'
 
-    const sizeNum = parseInt(data.teamSize || '0', 10)
-    if (sizeNum >= 2 && !data.member2?.trim()) e.member2 = 'Provide at least one teammate'
-    if (sizeNum >= 3 && !data.member3?.trim()) e.member3 = 'Provide teammate name'
-    if (sizeNum >= 4 && !data.member4?.trim()) e.member4 = 'Provide teammate name'
+  const sizeNum = parseInt(data.teamSize || '0', 10)
+  if (sizeNum >= 4 && !data.member2?.trim()) e.member2 = 'Provide teammate name'
+  if (sizeNum >= 4 && !data.member3?.trim()) e.member3 = 'Provide teammate name'
+  if (sizeNum >= 4 && !data.member4?.trim()) e.member4 = 'Provide teammate name'
+  if (sizeNum >= 5 && !data.member5?.trim()) e.member5 = 'Provide teammate name'
 
     if (!data.agree) e.agree = 'You must agree to the rules'
 
@@ -88,7 +91,7 @@ export default function RegistrationForm() {
             email: data.leaderEmail.trim(),
             phone: data.leaderPhone.trim(),
           },
-          members: [data.member2, data.member3, data.member4].filter(Boolean),
+          members: [data.member2, data.member3, data.member4, data.member5].filter(Boolean),
           agree: data.agree,
           createdAt: serverTimestamp(),
         })
@@ -155,9 +158,8 @@ export default function RegistrationForm() {
               <label className="label">Team Size</label>
               <select className="input" value={data.teamSize} onChange={e => set('teamSize', e.target.value)}>
                 <option value="">Select</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
               </select>
               {errors.teamSize && <p className="error">{errors.teamSize}</p>}
             </div>
@@ -183,19 +185,24 @@ export default function RegistrationForm() {
 
           <div className="grid md:grid-cols-3 gap-4">
             <div>
-              <label className="label">Member 2 (required)</label>
+              <label className="label">Member 2</label>
               <input className="input" value={data.member2} onChange={e => set('member2', e.target.value)} placeholder="Full name" />
               {errors.member2 && <p className="error">{errors.member2}</p>}
             </div>
             <div>
-              <label className="label">Member 3 (optional)</label>
+              <label className="label">Member 3</label>
               <input className="input" value={data.member3} onChange={e => set('member3', e.target.value)} placeholder="Full name" />
               {errors.member3 && <p className="error">{errors.member3}</p>}
             </div>
             <div>
-              <label className="label">Member 4 (optional)</label>
+              <label className="label">Member 4</label>
               <input className="input" value={data.member4} onChange={e => set('member4', e.target.value)} placeholder="Full name" />
               {errors.member4 && <p className="error">{errors.member4}</p>}
+            </div>
+            <div>
+              <label className="label">Member 5 (only for team of 5)</label>
+              <input className="input" value={data.member5} onChange={e => set('member5', e.target.value)} placeholder="Full name" />
+              {errors.member5 && <p className="error">{errors.member5}</p>}
             </div>
           </div>
 

@@ -31,9 +31,13 @@ export default function Home() {
   }>(null)
   // Shared list as mentors and jury are the same
   const mentors = [
-    { name: 'Mentor One', role: 'AI Engineer', img: 'https://i.pravatar.cc/200?img=12' },
-    { name: 'Mentor Two', role: 'Product Mentor', img: 'https://i.pravatar.cc/200?img=32' },
-    { name: 'Mentor Three', role: 'Startup Mentor', img: 'https://i.pravatar.cc/200?img=22' }
+    { name: 'Dr B. Sai Jyothi', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Dr Kiran Kumar', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr N. Tagore', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr Ravikumar', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'M. Ramya Harika', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Dr M. Sirisha', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr Mallik (Mechanical)', role: 'Mentor & Jury', img: '/avatar.svg' }
   ]
   const tracks = [
     {
@@ -78,21 +82,35 @@ export default function Home() {
         </div>
       ),
     },
+    {
+      id: 'infranova',
+      title: '🏗️ INFRANOVA (Mechanical & Civil Branches)',
+      theme: 'Building Sustainable and Resilient Solutions for Future Infrastructure',
+      img: '/infranova.png',
+      preview: 'Theme: Building Sustainable and Resilient Solutions for Future Infrastructure. Tailored for Mechanical, Civil, and allied branches focusing on sustainability and resilient design.',
+      details: (
+        <div className="space-y-3 text-white/80">
+          <p>
+            The Infranova track is built for Mechanical, Civil, and allied engineering branches, focusing on futuristic infrastructure and sustainability.
+          </p>
+          <p className="font-semibold text-white">Participants will get the opportunity to:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Develop sustainable infrastructure solutions for smart cities.</li>
+            <li>Innovate in areas like green construction, renewable energy integration, and resilient designs.</li>
+            <li>Apply mechanical design, structural engineering, and material sciences for real-world impact.</li>
+          </ul>
+          <p className="pt-2">👉 Tailored for engineers who shape the physical world with resilient and eco-friendly designs.</p>
+        </div>
+      ),
+    },
   ] as const
   return (
     <main>
       {/* Header */}
       <header className="sticky top-0 z-20 border-b border-white/10 bg-[rgba(11,16,32,0.6)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(11,16,32,0.4)]">
         <div className="container flex items-center justify-between py-4">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative h-9 w-9 overflow-hidden rounded-md transition duration-300 group-hover:scale-105">
-              <img
-                src="https://storage.googleapis.com/reskilll/Flux_Dev_Design_a_modern_and_futuristic_logo_for_a_nationallev_1C1hN09e.jpg"
-                alt="Agentic India"
-                className="rounded-md object-cover h-full w-full"
-              />
-            </div>
-            <span className="font-bold transition duration-300 group-hover:text-primary">INNOVA HACK 2025</span>
+          <a href="#" className="font-bold text-xl transition duration-300 hover:text-primary">
+            INNOVA HACK 2025
           </a>
 
           {/* Desktop Navigation */}
@@ -125,47 +143,54 @@ export default function Home() {
         <div className="container flex flex-col-reverse md:flex-row items-center gap-8">
           <div className="md:w-3/5">
             {/* Host logos */}
-            <div className="mb-3 flex items-center gap-3 text-white/70">
-              <span className="text-xs md:text-sm">Organized by</span>
-              <div className="flex items-center gap-2">
+            <div className="mb-6 flex items-center justify-center md:justify-start gap-3 text-white/70">
+              <span className="text-sm font-medium">Organized by</span>
+              <div className="flex items-center gap-3">
                 <img
-                  src="/vvisc.svg"
+                  src="/vvisc.png"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/vvisc.svg' }}
                   alt="VVIT IUCEE Student Chapter (VVISC)"
-                  className="h-8 w-8 md:h-9 md:w-9 rounded bg-white/5 p-1 border border-white/10 object-contain"
+                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white/10 p-2 border border-white/20 object-contain transition-transform hover:scale-105"
                   loading="eager"
                 />
                 <img
-                  src="/vvitu.svg"
+                  src="/vvitu.png"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/vvitu.svg' }}
                   alt="VVIT University"
-                  className="h-8 w-8 md:h-9 md:w-9 rounded bg-white/5 p-1 border border-white/10 object-contain"
+                  className="h-10 w-10 md:h-12 md:w-12 rounded-lg bg-white/10 p-2 border border-white/20 object-contain transition-transform hover:scale-105"
                   loading="eager"
                 />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-center md:text-left">
               INNOVA HACK 2025
             </h1>
-            <p className="mt-4 text-lg text-white/80">
+            <p className="mt-4 text-lg md:text-xl text-white/80 text-center md:text-left">
               &ldquo;Innovate. Collaborate. Hack the Future.&rdquo;
             </p>
-            <div className="mt-4 text-white/70">
-              <div>September 25–26, 2025</div>
-              <div>Vasireddy Venkatadri Institute of Technology (VVIT), Guntur • 24-Hour Hackathon • Teams of 2–4</div>
+            <div className="mt-6 text-white/70 text-center md:text-left space-y-1">
+              <div className="font-semibold text-white">September 25–26, 2025</div>
+              <div>Vasireddy Venkatadri Institute of Technology (VVIT), Guntur</div>
+              <div>24-Hour Hackathon • Teams of 4–5</div>
             </div>
-            <CTAButtons onRegisterClick={() => setRegisterOpen(true)} />
+            <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+              <button 
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-lg font-semibold text-white hover:bg-blue-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                onClick={() => setRegisterOpen(true)}
+              >
+                Register Now
+              </button>
+              <a
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-6 py-3 text-lg font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur"
+                href="#schedule"
+              >
+                View Schedule
+              </a>
+            </div>
           </div>
-          <div className="md:w-2/5">
-            <Reveal>
-              <div className="relative aspect-square w-full">
-                <img
-                  src="https://storage.googleapis.com/reskilll/Flux_Dev_Design_a_modern_and_futuristic_logo_for_a_nationallev_1C1hN09e.jpg"
-                  alt="INNOVA HACK 2025"
-                  className="object-cover rounded-xl border border-white/10 w-full h-full"
-                  loading="eager"
-                />
-              </div>
-            </Reveal>
-          </div>
+
+
+
         </div>
       </section>
 
@@ -183,11 +208,11 @@ export default function Home() {
                 INNOVA HACK 2025 is a 24-hour innovation-driven hackathon organized by the VVIT IUCEE Student Chapter (VVISC). It brings together the brightest minds from engineering colleges to solve real-world problems with creativity and technology.
               </p>
               <p className="mt-4">
-                This hackathon is divided into two domains: CSE & Allied Branches (Software, AI/ML, Cybersecurity, Web & Mobile Apps) and ECE & EEE Branches (Hardware, IoT, Robotics, Embedded Systems, Power Systems).
+                This hackathon spans three domains: CSE & Allied Branches (Software, AI/ML, Cybersecurity, Web & Mobile Apps), ECE & EEE Branches (Hardware, IoT, Robotics, Embedded Systems, Power Systems), and INFRANOVA for Mechanical, Civil & Allied Branches (Sustainable infrastructure, mechanical design, structural systems).
               </p>
             </div>
             <ul className="card space-y-2">
-              <li>• Teams of 2–4 members</li>
+              <li>• Teams of 4–5 members</li>
               <li>• 24-hour hackathon (Sept 25–26, 2025)</li>
               <li>• Hosted at VVIT, Guntur</li>
               <li>• Open to all engineering students</li>
@@ -201,7 +226,7 @@ export default function Home() {
       <section id="challenges" className="py-12 scroll-mt-24">
         <div className="container">
           <h2 className="section-title animate-fade-in-up">Problem Statements / Tracks</h2>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {tracks.map((t) => (
               <Reveal key={t.id}>
                 <div className="card hover:shadow-glow">
@@ -209,7 +234,7 @@ export default function Home() {
                     <img src={t.img} alt={t.title} className="object-cover rounded-lg w-full h-full" loading="lazy" />
                   </div>
                   <h3 className="text-xl font-semibold">{t.title}</h3>
-                  <div className="text-sm text-white/70">Theme: {t.theme}</div>
+                   
                   <p className="mt-2 text-white/80">{t.preview}</p>
                   <div className="mt-3">
                     <button
@@ -251,12 +276,12 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-xl">Day 1 - September 25, 2025</h4>
               <Timeline
                 items={[
-                  { date: '09:30 AM', title: 'Registrations & Welcome Kits' },
-                  { date: '11:00 AM', title: 'Orientation & Ice-breaking' },
-                  { date: '01:30 PM', title: 'Hackathon Kick-off (Coding Begins)' },
-                  { date: '05:00 PM', title: 'Fun Activity / Team Bonding' },
+                  { date: '09:30 AM – 10:30 AM', title: 'Registrations & Welcome Kit Distribution' },
+                  { date: '11:00 AM – 12:30 PM', title: 'Orientation & Ice-breaking Session' },
+                  { date: '01:30 PM', title: 'Hackathon Officially Begins 🚀' },
                   { date: '07:30 PM', title: 'Dinner' },
-                  { date: '11:00 PM onwards', title: 'Overnight Hackathon (Optional mentor support till 1 AM)' }
+                  { date: '08:30 PM – Overnight', title: 'Hackathon Continues (Optional Mentor Support till 1 AM)'
+                  }
                 ]}
               />
             </div>
@@ -266,17 +291,20 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-xl">Day 2 - September 26, 2025</h4>
               <Timeline
                 items={[
-                  { date: '07:00 AM', title: 'Breakfast & Fresh-up' },
-                  { date: '08:00 AM – 11:30 AM', title: 'Final Sprint (Coding + Documentation)' },
-                  { date: '11:30 AM', title: 'Project Demos & Judging' },
-                  { date: '01:30 PM', title: 'Winners Announcement & Award Ceremony' },
-                  { date: '03:30 PM', title: 'Closing, Feedback & Networking' }
+                  { date: '07:00 AM – 08:00 AM', title: 'Breakfast' },
+                  { date: '08:00 AM – 11:30 AM', title: 'Final Sprint (Polishing & Documentation)' },
+                  { date: '11:30 AM – 12:30 PM', title: 'Project Evaluation (Team Demos)' },
+                  { date: '01:30 PM – 03:00 PM', title: 'Winners Announcement & Award Ceremony 🏆' },
+                  { date: '03:30 PM – 04:00 PM', title: 'Group Photo & Closing' }
                 ]}
               />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Hidden anchor for Judges link */}
+      <div id="jury" className="h-0" aria-hidden />
 
       {/* Mentors */}
       <section id="mentors" className="py-12 scroll-mt-24">
@@ -323,24 +351,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="partners" className="py-12 scroll-mt-24">
-        <div className="container">
-          <h2 className="section-title animate-fade-in-up">Partners</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-center">
-            {[
-              'https://storage.googleapis.com/reskilll/anurag-logo-2L5ZZFsO.png',
-              'https://storage.googleapis.com/reskilll/Group%2013923LC6ub0avxMePYU.png'
-            ].map((src, i) => (
-              <Reveal key={i}>
-                <div className="card flex items-center justify-center p-6">
-                  <img src={src} alt={`partner-${i}`} className="object-contain h-20" loading="lazy" />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="py-12 scroll-mt-24">
@@ -354,7 +364,7 @@ export default function Home() {
               },
               {
                 q: 'What is the team size?',
-                a: 'Teams of 2–4 members are allowed. You can form teams or join as individuals.'
+                a: 'Teams of 4–5 members are allowed. You can form teams or join as individuals.'
               },
               {
                 q: 'Is prior hackathon experience required?',

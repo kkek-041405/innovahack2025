@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Generic profile avatar">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#bg)"/>
+  <!-- Head -->
+  <circle cx="64" cy="46" r="22" fill="#e5e7eb"/>
+  <!-- Shoulders/Chest -->
+  <path d="M16 116c0-22.091 19.909-40 44.5-40h7c24.591 0 44.5 17.909 44.5 40" fill="#d1d5db"/>
+</svg>
