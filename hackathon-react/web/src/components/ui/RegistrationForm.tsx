@@ -6,7 +6,7 @@ type FormData = {
   teamName: string
   college: string
   track: '💻 BYTE-BUILDERS (CSE & Allied Branches)' | '⚡ WATT-WORKS (ECE & EEE Branches)' | '🏗️ INFRANOVA (Mechanical & Civil Branches)' | ''
-  teamSize: '4' | '5' | ''
+  teamSize: '4' | '5' | '6' | ''
   leaderName: string
   leaderEmail: string
   leaderPhone: string
@@ -14,6 +14,7 @@ type FormData = {
   member3?: string
   member4?: string
   member5?: string
+  member6?: string
   agree: boolean
 }
 
@@ -29,6 +30,7 @@ const initialState: FormData = {
   member3: '',
   member4: '',
   member5: '',
+  member6: '',
   agree: false,
 }
 
@@ -48,7 +50,7 @@ export default function RegistrationForm() {
     if (!data.teamName.trim()) e.teamName = 'Team name is required'
     if (!data.college.trim()) e.college = 'College/University is required'
     if (!data.track) e.track = 'Please select a track'
-  if (!data.teamSize) e.teamSize = 'Select team size (4–5)'
+  if (!data.teamSize) e.teamSize = 'Select team size (4–6)'
     if (!data.leaderName.trim()) e.leaderName = 'Team leader name is required'
     if (!/^\S+@\S+\.\S+$/.test(data.leaderEmail)) e.leaderEmail = 'Valid email is required'
     if (!/^\+?[0-9]{7,15}$/.test(data.leaderPhone.replace(/\s|-/g, ''))) e.leaderPhone = 'Valid phone is required'
@@ -58,6 +60,7 @@ export default function RegistrationForm() {
   if (sizeNum >= 4 && !data.member3?.trim()) e.member3 = 'Provide teammate name'
   if (sizeNum >= 4 && !data.member4?.trim()) e.member4 = 'Provide teammate name'
   if (sizeNum >= 5 && !data.member5?.trim()) e.member5 = 'Provide teammate name'
+  if (sizeNum >= 6 && !data.member6?.trim()) e.member6 = 'Provide teammate name'
 
     if (!data.agree) e.agree = 'You must agree to the rules'
 
@@ -91,7 +94,7 @@ export default function RegistrationForm() {
             email: data.leaderEmail.trim(),
             phone: data.leaderPhone.trim(),
           },
-          members: [data.member2, data.member3, data.member4, data.member5].filter(Boolean),
+          members: [data.member2, data.member3, data.member4, data.member5, data.member6].filter(Boolean),
           agree: data.agree,
           createdAt: serverTimestamp(),
         })
@@ -161,6 +164,7 @@ export default function RegistrationForm() {
                 <option value="">Select</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
+                <option value="6">6</option>
               </select>
               {errors.teamSize && <p className="error">{errors.teamSize}</p>}
             </div>
@@ -201,9 +205,14 @@ export default function RegistrationForm() {
               {errors.member4 && <p className="error">{errors.member4}</p>}
             </div>
             <div>
-              <label className="label">Member 5 (only for team of 5)</label>
+              <label className="label">Member 5 (required for team of 5–6)</label>
               <input className="input" value={data.member5} onChange={e => set('member5', e.target.value)} placeholder="Full name" />
               {errors.member5 && <p className="error">{errors.member5}</p>}
+            </div>
+            <div>
+              <label className="label">Member 6 (only for team of 6)</label>
+              <input className="input" value={data.member6} onChange={e => set('member6', e.target.value)} placeholder="Full name" />
+              {errors.member6 && <p className="error">{errors.member6}</p>}
             </div>
           </div>
 

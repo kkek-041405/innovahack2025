@@ -175,7 +175,7 @@ export default function Home() {
             <div className="mt-6 text-white/70 text-center md:text-left space-y-1">
               <div className="font-semibold text-white">September 25–26, 2025</div>
               <div>Vasireddy Venkatadri Institute of Technology (VVIT), Guntur</div>
-              <div>24-Hour Hackathon • Teams of 4–5</div>
+              <div>24-Hour Hackathon • Teams of 4–6</div>
             </div>
             <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
               <button 
@@ -227,7 +227,7 @@ export default function Home() {
               </p>
             </div>
             <ul className="card space-y-2">
-              <li>• Teams of 4–5 members</li>
+              <li>• Teams of 4–6 members</li>
               <li>• 24-hour hackathon (Sept 25–26, 2025)</li>
               <li>• Hosted at VVIT University, Guntur</li>
               <li>• Open to all engineering students</li>
@@ -415,7 +415,7 @@ export default function Home() {
               },
               {
                 q: 'What is the team size?',
-                a: 'Teams of 4–5 members are allowed. You can form teams. '
+                a: 'Teams of 4–6 members are allowed. You can form teams.'
               },
               {
                 q: 'Is prior hackathon experience required?',
