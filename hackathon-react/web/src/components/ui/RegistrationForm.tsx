@@ -100,9 +100,13 @@ export default function RegistrationForm() {
         })
         setSubmitted(true)
         setData(initialState)
-      } catch (err: any) {
+    } catch (err: unknown) {
         console.error('Registration submit failed', err)
-        setSubmitError(err?.message || 'Failed to submit. Please try again later.')
+        // Try to read message if available without using `any`
+        const msg = typeof err === 'object' && err !== null && 'message' in err && typeof (err as { message?: unknown }).message === 'string'
+          ? (err as { message?: unknown }).message as string
+          : undefined
+        setSubmitError(msg || 'Failed to submit. Please try again later.')
       } finally {
         setSubmitting(false)
       }

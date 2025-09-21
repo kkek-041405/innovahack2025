@@ -1,25 +1,6 @@
 import { MobileMenu, NavLink, Reveal, Timeline, FaqAccordion, RegistrationForm, Modal } from '../components/ui'
 import { useState } from 'react'
 
-function CTAButtons({ onRegisterClick }: { onRegisterClick: () => void }) {
-  return (
-    <div className="mt-6 flex flex-wrap gap-3">
-      <button
-        className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 font-semibold text-white hover:bg-blue-600 transition"
-        onClick={onRegisterClick}
-      >
-        Register Now
-      </button>
-      <a
-        className="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-3 font-semibold hover:bg-white/10"
-        href="#schedule"
-      >
-        View Schedule
-      </a>
-    </div>
-  )
-}
-
 export default function Home() {
   const [registerOpen, setRegisterOpen] = useState(false)
   const [activeTrack, setActiveTrack] = useState<null | {
