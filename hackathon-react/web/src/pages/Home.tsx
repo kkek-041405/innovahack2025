@@ -34,11 +34,14 @@ export default function Home() {
     { name: 'Dr B. Sai Jyothi', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Dr Kiran Kumar', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Dr. K.V.L Somasekhar', role: 'Mentor & Jury', img: '/avatar.svg' },
-    { name: 'Mr N. Tagore', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr. MRN Tagore', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Mr Ravikumar', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'M. Ramya Harika', role: 'Mentor & Jury', img: '/avatar.svg' },
     { name: 'Dr M. Sirisha', role: 'Mentor & Jury', img: '/avatar.svg' },
-    { name: 'Mr Mallik (Mechanical)', role: 'Mentor & Jury', img: '/avatar.svg' }
+    { name: 'Mr Mallik ', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr. J. Madhu babu', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr. Sekar', role: 'Mentor & Jury', img: '/avatar.svg' },
+    { name: 'Mr. Satyanarayana', role: 'Mentor & Jury', img: '/avatar.svg' },
   ]
   const tracks = [
     {
@@ -174,7 +177,7 @@ export default function Home() {
             </p>
             <div className="mt-6 text-white/70 text-center md:text-left space-y-1">
               <div className="font-semibold text-white">September 25–26, 2025</div>
-              <div>Vasireddy Venkatadri Institute of Technology (VVIT), Guntur</div>
+              <div>Vasireddy Venkatadri International Technological University (VVITU), Guntur</div>
               <div>24-Hour Hackathon • Teams of 4–6</div>
             </div>
             <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
@@ -292,12 +295,15 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-xl">Day 1 - September 25, 2025</h4>
               <Timeline
                 items={[
-                  { date: '09:30 AM – 10:30 AM', title: 'Registrations & Welcome Kit Distribution' },
-                  { date: '11:00 AM – 12:30 PM', title: 'Orientation & Ice-breaking Session' },
-                  { date: '01:30 PM', title: 'Hackathon Officially Begins 🚀' },
-                  { date: '07:30 PM', title: 'Dinner' },
-                  { date: '08:30 PM – Overnight', title: 'Hackathon Continues (Optional Mentor Support till 1 AM)'
-                  }
+                  { date: '08:00 AM – 9:00 AM', title: 'Registrations & Welcome Kit Distribution' },
+                  { date: '10:00 AM 5:– 11:00 PM', title: 'Orientation & Ice-breaking Session' },
+                  { date: '11:00 PM', title: 'Hackathon Officially Begins 🚀' },
+                  { date: '12:30 PM – 1:30 PM' , title: 'lunch'},
+                  { date: '01:30 PM - 3:30 PM', title: 'Hackathon Continues' },
+                  { date: '03:30 PM - 3:50 PM', title: 'Break'},
+                  { date: '04:00 PM – 8:00 PM', title: 'Hackathon Continues'},
+                  { date: '08:00 PM – 9:00 PM', title: 'Dinner'},
+                  { date: '09:00 PM – 7:00 AM', title: 'Hackathon Continues (Optional Mentor Support till 1 AM)'},
                 ]}
               />
             </div>
@@ -307,11 +313,12 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-xl">Day 2 - September 26, 2025</h4>
               <Timeline
                 items={[
-                  { date: '07:00 AM – 08:00 AM', title: 'Breakfast' },
-                  { date: '08:00 AM – 11:30 AM', title: 'Final Sprint (Polishing & Documentation)' },
-                  { date: '11:30 AM – 12:30 PM', title: 'Project Evaluation (Team Demos)' },
-                  { date: '01:30 PM – 03:00 PM', title: 'Winners Announcement & Award Ceremony 🏆' },
-                  { date: '03:30 PM – 04:00 PM', title: 'Group Photo & Closing' }
+                  { date: '07:00 AM – 08:00 AM', title: 'Breakfast & Fresh up' },
+                  { date: '08:00 AM – 09:00 AM', title: 'Final Sprint (Polishing & Documentation)' },
+                  { date: '09:00 AM – 11:00 AM', title: 'Project Evaluation (Team Demos)' },
+                  { date: '12:00 PM – 01:30 PM' , title: 'lunch'},
+                  { date: '01:30 PM – 02:30 PM', title: 'Winners Announcement & Award Ceremony 🏆' },
+                  { date: '02:30 PM – 03:30 PM', title: 'Group Photo & Feedback' }
                 ]}
               />
             </div>
@@ -382,7 +389,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-5">
             {[
               { title: 'Certificates', desc: 'For top winners across all tracks' },
-              { title: 'Goodies & Swags', desc: 'Certificates and special merchandise for all participants' },
               { title: 'Industry Networking', desc: 'Connect with industry experts, mentors, and potential employers' },
               { title: 'Career Opportunities', desc: 'Internship and project opportunities for standout teams' }
             ].map((p) => (
@@ -429,10 +435,6 @@ export default function Home() {
                 q: 'Do I need to bring hardware?',
                 a: 'All participants must bring their own laptops and power extension boxes/boards. Teams in hardware tracks (ECE/EEE) must also bring any required hardware kits and components.'
               },
-              {
-                q: 'I am new to hackathons. How do I approach the mentors? Is it during the hackathon or before/after?',
-                a: '👉 Mentors will be available throughout the hackathon to guide you. You can approach them during the event whenever you face challenges—whether technical, domain-related, or idea validation. Before the hackathon, you can clarify general doubts with the organizing team. After the hackathon, mentors may not be officially available, but you are encouraged to connect with them for further guidance.'
-              }
             ].map((f) => (
               <FaqAccordion key={f.q} question={f.q} answer={f.a} />
             ))}
